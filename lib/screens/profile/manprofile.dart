@@ -118,7 +118,7 @@ class CustomerProfileScreen extends StatelessWidget {
         currentIndex: 0,
         screens: [
           const CustomerDashboardScreen(),
-          InvoiceCreationScreen(),
+          const InvoiceCreationScreen(),
           const PaymentProcessingScreen(),
           PaymentHistoryScreen(),
           const CustomerProfileScreen()

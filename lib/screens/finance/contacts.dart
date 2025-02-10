@@ -180,7 +180,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 class ContactsScreen extends StatefulWidget {
   final GoogleSignInAccount? user;
 
-  const ContactsScreen({Key? key, required this.user}) : super(key: key);
+  const ContactsScreen({super.key, required this.user});
 
   @override
   State<ContactsScreen> createState() => _ContactsScreenState();

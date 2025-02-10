@@ -24,20 +24,20 @@ class _RegistrationscreenState extends State<Registrationscreen> {
         backgroundColor: Colors.blue,
       ),
       body: Padding(
-          padding: EdgeInsets.all(15.0),
+          padding: const EdgeInsets.all(15.0),
           child: Column(
             children: [
               Textfielld(hintText: "username", controller: usercont),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               Textfielld(hintText: "email", controller: emailcont),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               Textfielld(hintText: "password", controller: passcont),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               Textfielld(hintText: "confirm password", controller: confirmcont),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               ElevatedButton(onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const NextPage()));
-              }, child: Text("next page"))
+              }, child: const Text("next page"))
             ],
           )
           ),
@@ -55,7 +55,7 @@ class NextPage extends StatelessWidget {
         title: const Text("registration"),
         backgroundColor: Colors.blue,
       ),
-      body: Padding(
+      body: const Padding(
           padding: EdgeInsets.all(15.0),
           child: Column(
             children: [

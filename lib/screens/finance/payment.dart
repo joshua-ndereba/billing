@@ -9,8 +9,7 @@ import 'package:flutter/services.dart';
 class PaymentProcessingScreen extends StatefulWidget {
   final double? amount; // Amount to be paid
 
-  const PaymentProcessingScreen({Key? key, this.amount})
-      : super(key: key);
+  const PaymentProcessingScreen({super.key, this.amount});
 
   @override
   _PaymentProcessingScreenState createState() =>
@@ -28,20 +27,20 @@ class _PaymentProcessingScreenState extends State<PaymentProcessingScreen> {
       // Validate card details (basic example)
       if (_cardNumber.isEmpty || _cardExpiry.isEmpty || _cardCvc.isEmpty) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Please enter all card details')),
+          const SnackBar(content: Text('Please enter all card details')),
         );
         return;
       }
 
       // Simulate successful payment
-      await Future.delayed(Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 2));
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Payment successful!')),
+        const SnackBar(content: Text('Payment successful!')),
       );
       // Navigate back to previous screen or display success message
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Payment failed. Please try again.')),
+        const SnackBar(content: Text('Payment failed. Please try again.')),
       );
     }
   }
@@ -50,35 +49,35 @@ class _PaymentProcessingScreenState extends State<PaymentProcessingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Make Payment'),
+        title: const Text('Make Payment'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Amount: \$${widget.amount?.toStringAsFixed(2)}',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             TextFormField(
-              decoration: InputDecoration(labelText: 'Card Number'),
+              decoration: const InputDecoration(labelText: 'Card Number'),
               keyboardType: TextInputType.number,
               inputFormatters: [
                 FilteringTextInputFormatter.digitsOnly,
               ],
               onChanged: (value) => _cardNumber = value,
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Row(
               children: [
                 Expanded(
                   child: TextFormField(
-                    decoration: InputDecoration(labelText: 'Expiry (MM/YY)'),
+                    decoration: const InputDecoration(labelText: 'Expiry (MM/YY)'),
                     keyboardType: TextInputType.number,
                     inputFormatters: [
                       FilteringTextInputFormatter.digitsOnly,
@@ -87,11 +86,11 @@ class _PaymentProcessingScreenState extends State<PaymentProcessingScreen> {
                     onChanged: (value) => _cardExpiry = value,
                   ),
                 ),
-                SizedBox(width: 16.0),
+                const SizedBox(width: 16.0),
                 SizedBox(
                   width: 80,
                   child: TextFormField(
-                    decoration: InputDecoration(labelText: 'CVC'),
+                    decoration: const InputDecoration(labelText: 'CVC'),
                     keyboardType: TextInputType.number,
                     inputFormatters: [
                       FilteringTextInputFormatter.digitsOnly,
@@ -102,10 +101,10 @@ class _PaymentProcessingScreenState extends State<PaymentProcessingScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: _processPayment,
-              child: Text('Pay Now'),
+              child: const Text('Pay Now'),
             ),
           ],
         ),
@@ -113,11 +112,11 @@ class _PaymentProcessingScreenState extends State<PaymentProcessingScreen> {
       bottomNavigationBar: BottomNavBar(
         currentIndex: 2,
         screens: [
-          CustomerDashboardScreen(),
-          InvoiceCreationScreen(),
-          PaymentProcessingScreen(),
+          const CustomerDashboardScreen(),
+          const InvoiceCreationScreen(),
+          const PaymentProcessingScreen(),
           PaymentHistoryScreen(),
-          CustomerProfileScreen()
+          const CustomerProfileScreen()
           
         ],
       ),

@@ -23,11 +23,13 @@ class PaymentHistoryScreen extends StatelessWidget {
     // ... more payments
   ];
 
+   PaymentHistoryScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Payment History'),
+        title: const Text('Payment History'),
       ),
       body: ListView.builder(
         itemCount: _paymentHistory.length,
@@ -44,11 +46,11 @@ class PaymentHistoryScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavBar(
         currentIndex: 3,
         screens: [
-          CustomerDashboardScreen(),
-          InvoiceCreationScreen(),
-          PaymentProcessingScreen(),
+          const CustomerDashboardScreen(),
+          const InvoiceCreationScreen(),
+          const PaymentProcessingScreen(),
           PaymentHistoryScreen(),
-          CustomerProfileScreen()
+          const CustomerProfileScreen()
           
         ],
       ),

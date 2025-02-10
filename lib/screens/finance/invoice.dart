@@ -18,7 +18,7 @@ class _InvoiceCreationScreenState extends State<InvoiceCreationScreen> {
   String _customerName = '';
   String _invoiceDate = '';
   String _dueDate = '';
-  List<Map<String, dynamic>> _items = [];
+  final List<Map<String, dynamic>> _items = [];
 
   void _addItem() {
     setState(() {
@@ -69,12 +69,10 @@ class _InvoiceCreationScreenState extends State<InvoiceCreationScreen> {
                       firstDate: DateTime(2000),
                       lastDate: DateTime(2100),
                     );
-                    if (pickedDate != null) {
-                      setState(() {
-                        _invoiceDate = pickedDate.toString();
-                      });
-                    }
-                  },
+                    setState(() {
+                      _invoiceDate = pickedDate.toString();
+                    });
+                                    },
                 ),
                 const SizedBox(height: 16.0),
                 // Due Date
@@ -88,12 +86,10 @@ class _InvoiceCreationScreenState extends State<InvoiceCreationScreen> {
                       firstDate: DateTime(2000),
                       lastDate: DateTime(2100),
                     );
-                    if (pickedDate != null) {
-                      setState(() {
-                        _dueDate = pickedDate.toString();
-                      });
-                    }
-                  },
+                    setState(() {
+                      _dueDate = pickedDate.toString();
+                    });
+                                    },
                 ),
                 const SizedBox(height: 16.0),
                 // Invoice Items
@@ -140,8 +136,8 @@ class _InvoiceCreationScreenState extends State<InvoiceCreationScreen> {
       bottomNavigationBar: BottomNavBar(
         currentIndex: 1,
         screens: [
-          CustomerDashboardScreen(),
-          InvoiceCreationScreen(),
+          const CustomerDashboardScreen(),
+          const InvoiceCreationScreen(),
           const PaymentProcessingScreen(),
           PaymentHistoryScreen(),
           const CustomerProfileScreen()

@@ -250,15 +250,12 @@ class _LoginScreenState extends State<LoginScreen> {
 }
 */
 
-import 'dart:convert';
 
 import 'package:billing/widgets/textfielld.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 //import 'package:get/get.get.dart';
 //import 'package:hike/widgets/textfield.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:http/http.dart' as http;
 import 'package:google_sign_in/google_sign_in.dart';
 
 final usernamecont = TextEditingController();

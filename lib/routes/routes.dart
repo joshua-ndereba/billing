@@ -1,6 +1,5 @@
 import 'package:billing/screens/authentication/loginscreen.dart';
 import 'package:billing/screens/authentication/registrationscreen.dart';
-import 'package:billing/screens/finance/dashboard.dart';
 
 class Routes {
   static const String login = '/login';

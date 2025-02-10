@@ -99,7 +99,7 @@ class _CustomerDashboardScreenState extends State<CustomerDashboardScreen> {
                     
                     
                   },
-                  child: Text("contacts")),
+                  child: const Text("contacts")),
               const SizedBox(height: 20.0),
               // Payment History Chart (Simplified Example)
               const Text(
@@ -128,7 +128,7 @@ class _CustomerDashboardScreenState extends State<CustomerDashboardScreen> {
         currentIndex: 0,
         screens: [
           const CustomerDashboardScreen(),
-          InvoiceCreationScreen(),
+          const InvoiceCreationScreen(),
           const PaymentProcessingScreen(),
           PaymentHistoryScreen(),
           const CustomerProfileScreen()

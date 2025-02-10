@@ -8,7 +8,7 @@ import 'dart:convert';
 class AdminPanel extends StatefulWidget {
   final GoogleSignInAccount? user;
 
-  const AdminPanel({Key? key, required this.user}) : super(key: key);
+  const AdminPanel({super.key, required this.user});
 
   @override
   State<AdminPanel> createState() => _AdminPanelState();
@@ -16,8 +16,8 @@ class AdminPanel extends StatefulWidget {
 
 class _AdminPanelState extends State<AdminPanel> {
   List<Contact> _contacts = [];
-  List<Contact> _selectedContacts = [];
-  TextEditingController _messageController = TextEditingController();
+  final List<Contact> _selectedContacts = [];
+  final TextEditingController _messageController = TextEditingController();
 
   @override
   void initState() {
@@ -80,7 +80,7 @@ class _AdminPanelState extends State<AdminPanel> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Admin Panel'),
+        title: const Text('Admin'),
       ),
       body: Column(
         children: [

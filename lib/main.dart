@@ -36,7 +36,7 @@ class Routes {
   static final routes = {
    login: (context) => const LoginScreen(),
     registration: (context) =>  const Registrationscreen(),
-    dashboard: (context) => CustomerDashboardScreen(),
+    dashboard: (context) => const CustomerDashboardScreen(),
   };
 }
 
